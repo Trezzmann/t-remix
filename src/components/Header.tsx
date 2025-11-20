@@ -88,7 +88,7 @@ const Header: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={isMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
-          pointerEvents={isMenuOpen ? 'auto' : 'none'}
+          // pointerEvents={isMenuOpen ? 'auto' : 'none'}
         >
           {navItems.map((item, i) => (
             <motion.a
