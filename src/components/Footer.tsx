@@ -99,13 +99,13 @@ const Footer: React.FC = () => {
         
         <motion.div className="footer-links" variants={itemVariants}>
           <div className="footer-column">
-            {['All work', 'About us', 'Contact us', 'Tofu merch'].map((item, i) => (
+            {['All work', 'About us', 'Contact us', 'Kipa merch'].map((item, i) => (
               <motion.a
                 key={item}
-                href={item === 'Tofu merch' ? 'https://shoptofudesign.framer.website/' : `/${item.toLowerCase().replace(' ', '-')}`}
+                href={item === 'Kipa merch' ? 'https://shopKipadesign.framer.website/' : `/${item.toLowerCase().replace(' ', '-')}`}
                 className="footer-link"
-                target={item === 'Tofu merch' ? '_blank' : undefined}
-                rel={item === 'Tofu merch' ? 'noopener noreferrer' : undefined}
+                target={item === 'Kipa merch' ? '_blank' : undefined}
+                rel={item === 'Kipa merch' ? 'noopener noreferrer' : undefined}
                 custom={i}
                 variants={linkVariants}
                 initial="hidden"
@@ -134,7 +134,7 @@ const Footer: React.FC = () => {
           >
             We're big on our values both as people and as a studio. If you like our designs, you can also shop our{' '}
             <motion.a 
-              href="https://shoptofudesign.framer.website/" 
+              href="https://shopKipadesign.framer.website/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="footer-merch-link"
@@ -153,7 +153,7 @@ const Footer: React.FC = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span>© 2024 Tofu Design Studio</span>
+            <span>© 2024 Kipa Design Studio</span>
             <motion.span 
               animate={{ rotate: [0, 360] }}
               transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}

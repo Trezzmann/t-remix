@@ -115,6 +115,7 @@
   color: #000;
   line-height: 1.2;
   letter-spacing: -0.8px;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .project-category {
@@ -124,7 +125,8 @@
   line-height: 1.6;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .project-arrow {

@@ -48,7 +48,7 @@ const Testimonial: React.FC = () => {
             className="testimonial-quote"
             variants={itemVariants}
           >
-            Tofu designed Paka's new site, and I can't imagine a better partner to have worked with.
+            Kipa designed Paka's new site, and I can't imagine a better partner to have worked with.
           </motion.blockquote>
           
           <motion.cite 

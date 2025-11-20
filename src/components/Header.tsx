@@ -34,7 +34,7 @@ const Header: React.FC = () => {
           whileTap={{ scale: 0.95 }}
         >
           <a href="/">
-            <span className="logo-text">Tofu</span>
+            <span className="logo-text">Kipa</span>
             <motion.span 
               className="logo-dot"
               animate={{ 

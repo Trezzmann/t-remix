@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import React, { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 import './ProjectGrid.css';
 
 interface Project {
