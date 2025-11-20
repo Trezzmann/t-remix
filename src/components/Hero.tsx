@@ -28,33 +28,6 @@ const Hero: React.FC = () => {
 
   return (
     <section className="hero">
-      <div className="hero-background">
-        <motion.div 
-          className="hero-blob hero-blob-1"
-          animate={{
-            y: [0, 30, 0],
-            x: [0, 20, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        ></motion.div>
-        <motion.div 
-          className="hero-blob hero-blob-2"
-          animate={{
-            y: [0, -30, 0],
-            x: [0, -20, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        ></motion.div>
-      </div>
-
       <motion.div 
         className="hero-container"
         variants={containerVariants}

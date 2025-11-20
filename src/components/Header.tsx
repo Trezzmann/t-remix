@@ -5,8 +5,10 @@ import './Header.css';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const navItems = ['All work', 'About', 'Contact', 'Press'];
+
   const navVariants = {
-    hidden: { opacity: 0, y: -20 },
+    hidden: { opacity: 0, y: -10 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
@@ -18,40 +20,34 @@ const Header: React.FC = () => {
     })
   };
 
-  const menuVariants = {
-    closed: {
-      opacity: 0,
-      y: -20,
-      pointerEvents: 'none' as const
-    },
-    open: {
-      opacity: 1,
-      y: 0,
-      pointerEvents: 'auto' as const,
-      transition: {
-        duration: 0.3,
-        ease: 'easeOut'
-      }
-    }
-  };
-
   return (
-    <header className="header">
+    <motion.header 
+      className="header"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+    >
       <div className="header-container">
         <motion.div 
           className="logo"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           <a href="/">
             <span className="logo-text">Tofu</span>
-            <span className="logo-dot"></span>
+            <motion.span 
+              className="logo-dot"
+              animate={{ 
+                scale: [1, 1.2, 1],
+                opacity: [1, 0.8, 1]
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
           </a>
         </motion.div>
         
         <nav className="nav">
-          {['All work', 'About', 'Contact', 'Press'].map((item, i) => (
+          {navItems.map((item, i) => (
             <motion.a
               key={item}
               href={`/${item.toLowerCase().replace(' ', '-')}`}
@@ -60,6 +56,7 @@ const Header: React.FC = () => {
               initial="hidden"
               animate="visible"
               variants={navVariants}
+              whileHover={{ color: 'var(--accent)' }}
             >
               {item}
             </motion.a>
@@ -75,24 +72,25 @@ const Header: React.FC = () => {
           <motion.span 
             className="hamburger"
             animate={isMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-          ></motion.span>
+          />
           <motion.span 
             className="hamburger"
             animate={isMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-          ></motion.span>
+          />
           <motion.span 
             className="hamburger"
             animate={isMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-          ></motion.span>
+          />
         </motion.button>
 
         <motion.div 
           className="mobile-menu"
-          variants={menuVariants}
-          initial="closed"
-          animate={isMenuOpen ? 'open' : 'closed'}
+          initial={{ opacity: 0, y: -20 }}
+          animate={isMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+          transition={{ duration: 0.3 }}
+          pointerEvents={isMenuOpen ? 'auto' : 'none'}
         >
-          {['All work', 'About', 'Contact', 'Press'].map((item, i) => (
+          {navItems.map((item, i) => (
             <motion.a
               key={item}
               href={`/${item.toLowerCase().replace(' ', '-')}`}
@@ -107,7 +105,7 @@ const Header: React.FC = () => {
           ))}
         </motion.div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
